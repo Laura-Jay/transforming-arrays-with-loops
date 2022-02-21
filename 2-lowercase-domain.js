@@ -17,13 +17,17 @@
  * @returns {string[]} - list manipulated to lowercase
  */
 
-function lowercaseDomains(domainNames){
-const cleanedDomains = [];
-
-for (let i=0; i<domainNames.length; i++){
-    cleanedDomains.push(domainNames[i].toLowerCase())
-} return cleanedDomains;
+//transformation function
+function inLowerCase(domainName){
+return domainName.toLowerCase();
 }
+
+//pass function to .map method as argument
+function lowercaseDomains(domainNames){
+const cleanedDomains = domainNames.map(inLowerCase);
+return cleanedDomains;
+}
+
 
 // test cases
 
