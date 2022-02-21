@@ -4,12 +4,14 @@
  * @returns {number[]} - a number array showing the length of each string in words
  */
 
-function countStrings(words){
-const lengthArr = [];
+//transformation function
+function countString(word){
+    return word.length;
+}
 
-for (let word of words){
-    lengthArr.push(word.length);
-} return lengthArr;
+function countStrings(words){
+const lengthArr = words.map(countString);
+return lengthArr;
 }
 
 //test case
