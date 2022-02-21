@@ -3,13 +3,16 @@
 //Write a function that takes an array of objects representing Pokémon, with string properties name and type, 
 //and returns a descriptive sentence about them and their type: "<name> is a <type in lowercase> type Pokémon.".
 
-function pokemonType(pokemonArray){
-const pokedex = []; 
 
-for (let pokemon of pokemonArray){
-pokedex.push(pokemon.name + " is a " + pokemon.type + " type Pokemon.");
+//transformation function
+function pokeInfo(pokemon){
+    return pokemon.name + " is a " + pokemon.type + " type Pokemon."
 }
-return pokedex;
+
+function pokemonType(pokemonArray){
+    const pokedex = pokemonArray.map(pokeInfo);
+    return pokedex;
+    
 }
 
 //test case: 
