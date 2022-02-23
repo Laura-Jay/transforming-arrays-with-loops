@@ -5,14 +5,14 @@
 
 
 //transformation function
+
 function pokeInfo(pokemon){
-    return pokemon.name + " is a " + pokemon.type + " type Pokemon."
+    return `${pokemon.name} is a ${pokemon.type} type Pokemon.`;
 }
 
-function pokemonType(pokemonArray){
-    const pokedex = pokemonArray.map(pokeInfo);
-    return pokedex;
-    
+function pokemonType(pokemonObj){
+    const pokedex = pokemonObj.map(pokeInfo);
+    return pokedex; 
 }
 
 //test case: 
@@ -20,3 +20,5 @@ function pokemonType(pokemonArray){
 console.log(pokemonType([{ name: 'Bulbasaur', type: 'Grass' }, { name: 'Charmander', type: 'Fire' }, { name: 'Squirtle', type: 'Water' }]), 
 "[Bulbasaur is a grass type Pokémon., Charmander is a fire type Pokémon., Squirtle is a water type Pokémon.]");
 
+console.log(pokemonType([{ name: 'Dugtrio', type: 'Ground' }, { name: 'Ditto', type: 'Normal' }, { name: 'Pikachu', type: 'Thunder' }]), 
+"[Dugtrio is a Ground type Pokémon., Ditto is a Normal type Pokémon., Pikachu is a Thunder type Pokémon.]");
