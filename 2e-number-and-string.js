@@ -4,19 +4,23 @@
  * @returns {object} an object which has properties: the numbers values listed as number and the numbers value listed as a string
 **/
 
+//transformation function
+function printType(number){
+    let typeObj = {
+        asNumber: number,
+        asString: number.toString()
+    };
+    return typeObj;
+}
+
+//map function
 function numberAndString(numArr){
-const resultArr = [];
-
-    for (let number of numArr){
-    let numAsString = number.toString();
-    let valuesArr = [];
-    valuesArr.push("asNumber : ", number);
-    valuesArr.push("asString : ", numAsString);
-    resultArr.push(valuesArr);    
-}
-return resultArr;
+    const numObj = numArr.map(printType);
+    return numObj;
 }
 
-//test case
+//test cases
 
 console.log(numberAndString([ 4, -3.2, 0]), "[{asNumber : 4, asString: '4' },{asNumber : -3.2, asString: '3.2' },{asNumber : 0, asString: '0' }");
+console.log(numberAndString([ 100, -12, 1.7]), "[{asNumber : 100, asString: '100' },{asNumber : -12, asString: '-12' },{asNumber : 1.7, asString: '1.7' }");
+console.log(numberAndString([]), "[]");
